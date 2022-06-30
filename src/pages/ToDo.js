@@ -5,8 +5,13 @@ import { useNavigate } from 'react-router-dom';
 const ToDo = () => {
     const [tasks, setTasks] = useTasks();
     const navigate = useNavigate();
-    const handleNavigateToCompleteTask = () => {
+    const handleNavigateToCompleteTask = (event) => {
+        event.preventDefault();
         navigate('/completetasks');
+    }
+    const handleNavigateToUpdateTask = (event) => {
+        event.preventDefault();
+        navigate('/updatetask');
     }
     return (
         <div>
@@ -15,8 +20,8 @@ const ToDo = () => {
                 {
                     tasks.map(task => <div key={task._id}>
 
-                        <div className="overflow-x-auto">
-                            <table class="table w-full">
+                        <div className="overflow-x-auto flex justify-center">
+                            <table class="table w-1/2">
                                 <thead>
                                     <th>Id</th>
                                     <th>Daily Task</th>
@@ -25,7 +30,7 @@ const ToDo = () => {
                                 <tbody>
                                     <th>{task._id}</th>
                                     <td> <input onClick={handleNavigateToCompleteTask} type="checkbox" class="checkbox" /> {task.daily_task}</td>
-                                    <td><button className='btn btn-info'>Edit</button></td>
+                                    <td><button onClick={handleNavigateToUpdateTask} className='btn btn-info'>Edit</button></td>
                                 </tbody>
                             </table>
                         </div>

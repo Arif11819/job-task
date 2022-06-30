@@ -5,6 +5,7 @@ import CompleteTasks from './pages/CompleteTasks';
 import Calender from './pages/Calender';
 import Home from './pages/Home/Home';
 import ToDo from './pages/ToDo';
+import UpdateTask from './pages/UpdateTask';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path='/todo' element={<ToDo></ToDo>}></Route>
         <Route path='/completetasks' element={<CompleteTasks></CompleteTasks>}></Route>
         <Route path='/calender' element={<Calender></Calender>}></Route>
+        <Route path='/updatetask' element={<UpdateTask></UpdateTask>}></Route>
       </Routes>
     </div>
   );

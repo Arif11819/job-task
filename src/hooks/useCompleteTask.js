@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
 
-const useCompleteTask = tasksId => {
+const useCompleteTask = id => {
     const [tasks, setTasks] = useState({});
 
     useEffect(() => {
-        const url = `http://localhost:5000/tasks/${tasksId}`;
+        const url = `https://calm-cliffs-44598.herokuapp.com/tasks/${id}`;
         console.log(url);
-
         fetch(url)
             .then(res => res.json())
             .then(data => setTasks(data));
-    }, [tasksId]);
+    }, [id]);
     return [tasks, setTasks];
 }
 
