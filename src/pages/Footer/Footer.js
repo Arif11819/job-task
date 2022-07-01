@@ -7,7 +7,7 @@ const Footer = () => {
     const year = today.getFullYear();
     return (
         <footer class="flex justify-center items-center w-full h-24 bg-gray-300">
-            <p><FontAwesomeIcon className='pe-2' icon={faCopyright}></FontAwesomeIcon> All Right Reserved By Ariful Islam-{year}</p>
+            <p><FontAwesomeIcon icon={faCopyright}></FontAwesomeIcon> All Right Reserved By Ariful Islam-{year}</p>
         </footer>
     );
 };
